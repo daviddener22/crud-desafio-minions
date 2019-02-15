@@ -22,8 +22,8 @@ Rails.application.configure do
     :enable_starttls_auto => true,
     :user_name => ENV["SENDGRID_USERNAME"],
     :password  => ENV["SENDGRID_PASSWORD"],
-    :authentication => 'login',
-    :domain => 'yourdomain.com',
+    :authentication => :plain,
+    :domain => 'heroku.com',
   }
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
