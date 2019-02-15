@@ -8356,3 +8356,80 @@ Processing by MinionsController#index as HTML
 Completed 200 OK in 247ms (Views: 244.5ms | ActiveRecord: 0.8ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-02-15 17:12:10 -0200
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/david/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by MinionsController#index as HTML
+  Rendering minions/index.html.erb within layouts/application
+  [1m[36mMinion Load (0.5ms)[0m  [1m[34mSELECT "minions".* FROM "minions" ORDER BY "minions"."nome" ASC[0m
+  ↳ app/views/minions/index.html.erb:18
+  Rendered collection of minions/_minion.html.erb [6 times] (12.4ms)
+  [1m[36mMinion Load (2.4ms)[0m  [1m[34mSELECT  "minions".* FROM "minions" ORDER BY "minions"."preco" ASC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/views/minions/index.html.erb:35
+  Rendered collection of minions/_minion.html.erb [2 times] (36.2ms)
+  Rendered minions/index.html.erb within layouts/application (114.2ms)
+Completed 200 OK in 1363ms (Views: 1333.1ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/minions/23/envio_email" for 127.0.0.1 at 2019-02-15 17:12:16 -0200
+Processing by MinionsController#envio_email as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mMinion Load (0.5ms)[0m  [1m[34mSELECT  "minions".* FROM "minions" WHERE "minions"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/minions_controller.rb:45
+  Rendering email_reserva_mailer/email_reserva.html.erb within layouts/mailer
+  Rendered email_reserva_mailer/email_reserva.html.erb within layouts/mailer (0.5ms)
+EmailReservaMailer#email_reserva: processed outbound mail in 167.2ms
+Sent mail to rayssa@inventosdigitais.com.br (98.6ms)
+Date: Fri, 15 Feb 2019 17:12:17 -0200
+From: daviddener22@hotmail.com
+To: rayssa@inventosdigitais.com.br
+Cc: daviddener22@gmail.com
+Message-ID: <5c670f118e5cb_3e6f2acafa5d9b6c85341@David-VM.mail>
+Subject: Reserva de Minion
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html>=0D
+<html>=0D
+  <head>=0D
+    <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf=
+-8" />=0D
+    <style>=0D
+      =0D
+    </style>=0D
+  </head>=0D
+=0D
+  <body>=0D
+  <h2>Ol=C3=A1 Rayssa!</h2>=0D
+    <div>  =0D
+    Voc=C3=AA acaba de reservar uma miniatura Minion:=0D
+    <ul>=0D
+        <li>Nome: Minion Bob<li>=0D
+        <li>Descri=C3=A7=C3=A3o: Bob =C3=A9 o Minion mais infantil de tod=
+os<li>=0D
+        <li>Pre=C3=A7o: 79.99<li>=0D
+    </ul>=0D
+</div>=0D
+=0D
+  </body>=0D
+</html>=0D
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 1262ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-02-15 17:12:17 -0200
+Processing by MinionsController#index as HTML
+  Rendering minions/index.html.erb within layouts/application
+  [1m[36mMinion Load (1.9ms)[0m  [1m[34mSELECT "minions".* FROM "minions" ORDER BY "minions"."nome" ASC[0m
+  ↳ app/views/minions/index.html.erb:18
+  Rendered collection of minions/_minion.html.erb [6 times] (8.0ms)
+  [1m[36mMinion Load (0.5ms)[0m  [1m[34mSELECT  "minions".* FROM "minions" ORDER BY "minions"."preco" ASC LIMIT $1[0m  [["LIMIT", 2]]
+  ↳ app/views/minions/index.html.erb:35
+  Rendered collection of minions/_minion.html.erb [2 times] (5.2ms)
+  Rendered minions/index.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 122ms (Views: 118.2ms | ActiveRecord: 2.4ms)
+
+
