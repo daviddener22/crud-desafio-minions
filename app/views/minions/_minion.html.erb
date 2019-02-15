@@ -3,8 +3,9 @@
     <td><%= minion.descricao %></td>
     <td><%= minion.preco %></td>
     <td><%= minion.quantidade %></td>
-    <td><%= link_to "Alterar", edit_minion_path(minion), class:"btn btn-default" %></td>
+    <td><%= link_to "Alterar", edit_minion_path(minion), class:"btn btn-default" %>
     <td><%= button_to "Remover", minion, method: :delete,
     class:"btn btn-danger btn-sm",
-    data: {confirm: "Tem certeza que deseja remover o #{minion.nome}?"} %></td>
+    data: {confirm: "Tem certeza que deseja remover o #{minion.nome}?"} %>
+    <td><%= link_to "Reservar", envio_email_minion_path(minion), class:"btn btn-primary" %></td>
  </tr>           

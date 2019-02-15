@@ -37,6 +37,14 @@ class MinionsController < ApplicationController
 
     def destroy
         @minion.destroy
+        flash[:notice] = "Minion removido com sucesso!"
+        redirect_to root_url
+    end
+
+    def envio_email
+        @minion = Minion.find(params[:id])
+        EmailReservaMailer.email_reserva(@minion).deliver
+        flash[:notice] = "Minion reservado com sucesso! Favor checar sua caixa de entrada de e-mail"
         redirect_to root_url
     end
 
